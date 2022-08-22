@@ -21,6 +21,7 @@ def quess_the_number():
             counter += 1
             if is_valid(quess, right_range) == False:
                 print(f'Введите целое число от 1 до {right_range}!')
+                counter -= 1
                 continue
             else: quess = int(quess)
             if quess < num:
@@ -50,9 +51,7 @@ def quess_the_number():
 
 
 while True:
-    again = quess_the_number()
-    if again == True:
-        again = quess_the_number()
-    elif again == False:
+    if quess_the_number() == False:
         break
+print('-'*50)
 print('Спасибо, что играли в числовую угадайку. Еще увидимся...')
